@@ -10,6 +10,11 @@ male_users = data['results']
 # print(male_users)
 
 for i, user in enumerate(male_users):
-  print(f"{i+1}. {user['name']['title']} {user['name']['first']} {user['name']['last']} {user['email']}")
+
+  name = f"{user['name']['title']} {user['name']['first']} {user['name']['last']}"
+  email = user['email']
+  phone = user['phone']
+
+  print(f"{i+1}. {name}\n phone: {phone}\n email: {email}")
 
 
