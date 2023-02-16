@@ -1,9 +1,15 @@
 import requests
-import json
-response_API = requests.get('https://randomuser.me/api/')
-#print(response_API.status_code)
-data = response_API.text
 
-#json.loads(data)
+# for item in range(10):
+response = requests.get('https://randomuser.me/api/?results=100&gender=male')
 
-print(data)
+data = response.json()
+
+male_users = data['results']
+
+# print(male_users)
+
+for i, user in enumerate(male_users):
+  print(f"{i+1}. {user['name']['title']} {user['name']['first']} {user['name']['last']} {user['email']}")
+
+
